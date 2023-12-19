@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1240.0" styleClass="viewFrame" stylesheets="@../../../styles/app.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.vsite.storeappfx.InventoryController">
+<GridPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="42.0" vgrow="NEVER" />
+        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="NEVER" />
+        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="90.0" vgrow="ALWAYS" />
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="513.2000305175782" minHeight="0.0" prefHeight="460.20003051757817" vgrow="SOMETIMES" />
+    </rowConstraints>
+
+    <Label text="Inventory" textFill="WHITE">
+        <font>
+            <Font name="Arial Bold" size="36.0" />
+        </font>
+    </Label>
+      <Label text="Add new product:" textFill="WHITE" GridPane.rowIndex="2">
+          <font>
+              <Font name="Arial Bold" size="20.0" />
+          </font>
+      </Label>
+
+    <GridPane GridPane.rowIndex="3">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="180.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+        <Label text="Name" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <Label text="Description" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <Label text="Quantity" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <Label text="Price" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+
+
+        <TextField fx:id="tfNewProdName" onKeyTyped="#handleInput" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin></TextField>
+        <TextField fx:id="tfNewProdDesc" onKeyTyped="#handleInput" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin></TextField>
+        <TextField fx:id="tfNewProdQuantity" onKeyTyped="#handleInput" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin></TextField>
+        <TextField fx:id="tfNewProdPrice" onKeyTyped="#handleInput" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin></TextField>
+
+        <Button fx:id="btnAddProduct" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addProduct" styleClass="buttonCustom" text="Add" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Button>
+
+
+
+    </GridPane>
+
+    <Label text="Edit a product:" textFill="WHITE" GridPane.rowIndex="5">
+        <font>
+            <Font name="Arial Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <GridPane GridPane.rowIndex="6">
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="840.0" minWidth="10.0" prefWidth="840.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="595.0" minWidth="10.0" prefWidth="360.60000000000014" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+       <TableView fx:id="tblProducts" maxWidth="-Infinity" onKeyReleased="#setSelectedProductItem" onMouseClicked="#setSelectedProductItem" prefWidth="830.0" styleClass="tableCustom" GridPane.columnIndex="0" GridPane.hgrow="NEVER" GridPane.rowIndex="0">
+            <columns>
+                <TableColumn fx:id="colProdName" prefWidth="128" resizable="false" text="Name" />
+                <TableColumn fx:id="colProdDescription" maxWidth="1.7976931348623157E308" prefWidth="525.0" resizable="false" text="Description" />
+                <TableColumn fx:id="colProdQuantity" prefWidth="60.0" resizable="false" text="#" />
+                <TableColumn fx:id="colProdPrice" prefWidth="100.0" resizable="false" text="Price" />
+            </columns>
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TableView>
+       <GridPane GridPane.columnIndex="1">
+         <columnConstraints>
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+               <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+          <GridPane.margin>
+             <Insets left="10.0" />
+          </GridPane.margin>
+
+           <Label text="Name" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+           </Label>
+
+           <Label text="Description" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="3">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+           </Label>
+
+           <Label text="Quantity" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="5">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+           </Label>
+
+           <Label text="Price" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="7">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+           </Label>
+
+           <TextField fx:id="tfEditProdName" onKeyTyped="#handleInput" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></TextField>
+           <TextField fx:id="tfEditProdDesc" onKeyTyped="#handleInput" GridPane.columnIndex="0" GridPane.rowIndex="4">
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></TextField>
+           <TextField fx:id="tfEditProdQuantity" onKeyTyped="#handleInput" GridPane.columnIndex="0" GridPane.rowIndex="6">
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></TextField>
+           <TextField fx:id="tfEditProdPrice" onKeyTyped="#handleInput" GridPane.columnIndex="0" GridPane.rowIndex="8">
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></TextField>
+
+           <Button fx:id="btnUpdateProduct" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateProduct" styleClass="buttonCustom" text="Update" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="9">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+           </Button>
+
+           <Button fx:id="btnDeleteProduct" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteProduct" styleClass="buttonCustom" text="Delete" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="11">
+               <font>
+                   <Font name="Arial Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+           </Button>
+
+      </GridPane>
+    </GridPane>
+
+</GridPane>
+</AnchorPane>

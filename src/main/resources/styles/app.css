@@ -1,0 +1,53 @@
+.mainFrame {
+    -fx-background-color: #3c3f41;
+    -fx-background-radius: 20px 20px 20px 20px;
+    -fx-border-radius: 20px 20px 20px 20px;
+}
+
+.dockFrame {
+    -fx-background-color:  #264E77;
+    -fx-background-radius: 20px 0 0 20px;
+}
+
+.titleFrame {
+    -fx-background-color:  #363636;
+    -fx-background-radius: 0 20px 0 0;
+}
+
+.title {
+    -fx-text-fill: #264E77;
+}
+
+.viewFrame {
+    -fx-background-color:  #363636;
+    -fx-background-radius: 0 0 20px 0;
+}
+
+.buttonCustom {
+    -fx-background-color:  #264E77;
+}
+.buttonCustom:hover {
+    -fx-background-color: #b6b6b6;
+}
+
+.buttonClose {
+    -fx-background-color:  #264E77;
+    -fx-background-radius: 0 20px 0 0;
+}
+.buttonClose:hover {
+    -fx-background-color: #eb4034;
+    -fx-background-radius: 0 20px 0 0;
+}
+
+.buttonMin {
+    -fx-background-color:  #264E77;
+    -fx-background-radius: 0 0 0 0;
+}
+.buttonMin:hover {
+    -fx-background-color: #b6b6b6;
+    -fx-background-radius: 0 0 0 0;
+}
+
+.tableCustom {
+    -fx-background-radius: 2px;
+}
