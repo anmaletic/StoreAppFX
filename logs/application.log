@@ -121,3 +121,4 @@ java.lang.IllegalArgumentException: Unknown caller: btnStore
 	at javafx.graphics@21/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@21/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2023-12-19 12:07:41,191 INFO [JavaFX Application Thread] h.v.s.MainController [LoginController.java:50] Attempted login with wrong data. User: admin
