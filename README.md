@@ -1,4 +1,4 @@
-StoreminatorFX
+## StoreminatorFX
 
 - ##### Backend: JAVA
 - ##### Frontend: JavaFX
